@@ -19,11 +19,9 @@
 
     <div
         class="px-6 py-5 bg-white border-b border-gray-200 rounded-lg shadow-none dark:bg-gray-900 dark:border-gray-950 sm:px-6">
-        <h3 class="flex items-center text-lg font-medium leading-6 text-gray-900 dark:text-gray-50">
-            <span class="{{ $methodColor }} rounded-md px-4 py-1 mr-2">{{ $method }}</span>
-            <span
-                class="px-4 py-1 ml-2 text-gray-800 bg-gray-100 rounded-md dark:bg-gray-800 dark:text-gray-100">{{ $record->path }}
-            </span>
+        <h3 class="flex items-center text-lg font-medium leading-6 text-gray-900 dark:text-gray-50 gap-x-2">
+            <span class="{{ $methodColor }} rounded-md px-4 py-1">{{ $method }}</span>
+            <span class="px-4 py-1 text-gray-800 bg-gray-100 rounded-md dark:bg-gray-800 dark:text-gray-100">{{ $record->path }}</span>
         </h3>
         <div class="flex items-center max-w-2xl mt-1 text-sm leading-5 text-gray-500">
             <span class="mt-1 font-mono text-xs text-gray-600 dark:text-gray-200">
@@ -44,9 +42,7 @@
         @if ($this->hasInfolist())
             {{ $this->infolist }}
         @else
-            <div
-                wire:key="{{ $this->getId() }}.forms.{{ $this->getFormStatePath() }}"
-            >
+            <div class="ltr" wire:key="{{ $this->getId() }}.forms.{{ $this->getFormStatePath() }}">
                 {{ $this->form }}
             </div>
         @endif
